@@ -45,4 +45,4 @@ If something breaks, open an issue and I'll take a look when I can.
 
 ## License
 
-CC0, so do whatever you want with it.
+MIT, so feel free to use it, change it or build on it. Just keep my name on it.

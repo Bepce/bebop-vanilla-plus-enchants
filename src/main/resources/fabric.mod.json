@@ -5,13 +5,14 @@
 	"name": "Bebop Vanilla Plus Enchants",
 	"description": "Vanilla+ enchantments you have to find, not buy. Strip Mining mines whole ore veins, Felling chops down whole trees. Found in mineshafts, dungeons, ancient cities and trial chamber vaults.",
 	"authors": [
-		"Me!"
+		"Bepce"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Bepce/Bebop-Vanilla-Plus-Enchants",
+		"sources": "https://github.com/Bepce/Bebop-Vanilla-Plus-Enchants",
+		"issues": "https://github.com/Bepce/Bebop-Vanilla-Plus-Enchants/issues"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/bebop-vanilla-plus-enchants/icon.png",
 	"environment": "*",
 	"entrypoints": {
