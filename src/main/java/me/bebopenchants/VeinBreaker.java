@@ -74,8 +74,6 @@ public final class VeinBreaker {
      */
     public static void breakAll(ServerPlayer player, List<BlockPos> positions) {
         ItemStack startTool = player.getMainHandItem();
-        int startDurability = remaining(startTool);
-        int broken = 0;
 
         breaking = true;
         try {
@@ -83,21 +81,11 @@ public final class VeinBreaker {
                 // Re-read the held item every time, in case it changed or broke
                 ItemStack tool = player.getMainHandItem();
                 if (tool.isEmpty() || tool != startTool || isAboutToBreak(tool)) break;
-                if (player.gameMode.destroyBlock(pos)) broken++;
+                player.gameMode.destroyBlock(pos);
             }
         } finally {
             breaking = false;
         }
-
-        // TEMPORARY debug line, remove once durability is confirmed working
-        BebopVanillaPlusEnchants.LOGGER.info(
-                "[VeinBreaker] found {} extra blocks, broke {}, durability {} -> {} (+1 pending for the hand-broken block)",
-                positions.size(), broken, startDurability, remaining(player.getMainHandItem()));
-    }
-
-    private static int remaining(ItemStack tool) {
-        if (tool.isEmpty()) return 0;
-        return tool.isDamageableItem() ? tool.getMaxDamage() - tool.getDamageValue() : -1;
     }
 
     /** Durability kept in reserve: 1 for the player's own (still pending) break + 1 left on the tool. */
